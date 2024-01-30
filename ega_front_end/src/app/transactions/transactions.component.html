@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center">
+    <button class="btn btn-outline-dark w-75 mb-5" routerLink="/new-transaction" type="button">MAKE A NEW TRANSACTON</button>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 mb-2">
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-header bg-warning text-white">
+        <img src="../assets/images/bank.svg" class="card-img-top" alt="..." style="width: 100px; height: 50px; margin-top: 20px;"> 
+             </div>
+      
+      <div class="card-body">
+        <h5 class="card-title">Source Account:</h5>
+        <h4 class="card-title">Recipient Account: </h4>
+        <h4 class="card-title">Amount: </h4>
+        
+        <div class="card-header bg-primary text-white">
+          <h4 class="card-title">Date: </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-header bg-warning text-white">
+        <img src="../assets/images/bank.svg" class="card-img-top" alt="..." style="width: 100px; height: 50px; margin-top: 20px;">
+      </div>
+      
+      <div class="card-body">
+        <h5 class="card-title">Source Account:</h5>
+        <h4 class="card-title">Recipient Account: </h4>
+        <h4 class="card-title">Amount: </h4>
+        
+        <div class="card-header bg-primary text-white">
+          <h4 class="card-title">Date: </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col" *ngFor="let transaction of transactions">
+    <div class="card h-100">
+      <div class="card-header bg-warning text-white">
+        <img src="../assets/images/bank.svg" class="card-img-top" alt="..." style="width: 100px; height: 50px; margin-top: 20px;">
+      </div>
+      
+      <div class="card-body">
+        <h5 class="card-title">Source Account: {{ transaction.sourceAccountId}}</h5>
+        <h4 class="card-title">Recipient Account: {{ transaction.recipientAccountId}}</h4>
+        <h4 class="card-title">Amount: {{ transaction.amount}}</h4>
+        
+        <div class="card-header bg-primary text-white">
+          <h4 class="card-title">Date: {{ transaction.transactionDate}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="custom-background d-flex">
+
+  <div id="nav-bar" class="bg-dark" style="position: fixed; height: 100%;">
+    <div id="nav-header" class="text-light">
+      <a id="nav-title" href="#" target="_blank" class="text-light">
+        <img class="nav_bar_logo" src="../assets/images/bank.svg" alt="Ega Bank Logo">EGA
+      </a>
+    </div>
+    <div id="nav-content">
+      <div class="nav-button">
+        <a href="#" routerLink="/accounts"><i class="fas fa-money-check-alt"></i><span>Accounts</span></a>
+      </div>
+      <div class="nav-button">
+        <a class="" href="#" routerLink="/transactions"><i class="fas fa-exchange-alt"></i><span>Transactions</span></a>
+      </div>
+      <!--<div class="nav-button">
+        <a class="" href="#" routerLink="/"><i class="fas fa-user"></i><span> Account</span></a>
+      </div>-->
+      <div class="nav-button">
+        <a class="" href="#" routerLink="/login"><i class="fas fa-sign-out-alt"></i><span>Disconnect</span></a>
+      </div>
+    </div>
+
+    <div id="nav-content">
+      <div class="nav-button">
+        <a href="#" routerLink="/clients"><i class="fas fa-user"></i><span>Client</span></a>
+      </div>
+      <div class="nav-button">
+        <a class="" href="#" routerLink="/accounts"><i class="fas fa-exchange-alt"></i><span>Accounts</span></a>
+      </div>
+      <div class="nav-button">
+        <a class="" href="#" routerLink="/login"><i class="fas fa-sign-out-alt"></i><span>Disconnect</span></a>
+      </div>
+    </div>
+
+
+    <div id="nav-footer">
+      <div id="nav-footer-heading">
+        <div id="nav-footer-avatar">
+          <img src="../assets/images/money.jpg" class="rounded-circle" />
+        </div>
+        <div id="nav-footer-titlebox">
+          <a id="nav-footer-title" target="_blank" class="text-light">@Meisekii</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Main Content Area -->
+<div class="d-flex flex-column flex-grow-1 p-4" style="margin-left: 250px;">
+
+ 
+  <router-outlet></router-outlet>
+
+  </div>
+</div>

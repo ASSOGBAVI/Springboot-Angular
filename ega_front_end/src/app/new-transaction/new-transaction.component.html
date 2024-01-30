@@ -1,0 +1,75 @@
+
+<div class="d-flex justify-content-center mt-3 mb-4">
+  <div class="btn-group" role="group" aria-label="Basic outlined example">
+    <button class="btn btn-outline-primary" (click)="toggleForm('form1')">Make a deposit</button>
+    <button class="btn btn-outline-primary" (click)="toggleForm('form2')">Make a transfer</button>
+    <button class="btn btn-outline-primary" (click)="toggleForm('form3')">Make a withdrawal</button>
+  </div>
+</div>
+
+
+<form *ngIf="selectedForm === 'form1'" [formGroup]="transactionForm" (ngSubmit)="makeDeposit()" >
+    <fieldset>
+      <legend>Make a deposit</legend>
+      <div class="mb-3">
+        <label for="recipient" class="form-label">Select the recipient account</label>
+       <!--
+        <select id="recipient" class="form-select">
+          <option>Recipient Account</option>
+        </select>
+        -->
+        <input formControlName="amount" type="text" id="amount" class="form-control" placeholder="Amount">
+
+      </div>
+      <div class="mb-3">
+        <label for="amount" class="form-label">Amount</label>
+        <input formControlName="amount" type="text" id="amount" class="form-control" placeholder="Amount">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+  </form>
+  
+  <form *ngIf="selectedForm === 'form2'" [formGroup]="transactionForm" (ngSubmit)="makeTransfer()"  >
+    <fieldset>
+      <legend>Make a transfer</legend>
+      <div class="mb-3">
+        <label for="source" class="form-label">Select the source account</label>
+        <!--<select id="source" class="form-select">
+          <option>Source Account</option>
+        </select>-->
+        <input formControlName="amount" type="text" id="amount" class="form-control" placeholder="Amount">
+
+      </div>
+      <div class="mb-3">
+        <label for="recipient" class="form-label">Recipient Account</label>
+        <input formControlName="" type="text" id="recipient" class="form-control" placeholder="Recipient Account Id" >
+      </div>
+      <div class="mb-3">
+        <label for="amount" class="form-label">Amount</label>
+        <input formControlName="amount" type="text" id="amount" class="form-control" placeholder="Amount">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+  </form>
+
+  <form *ngIf="selectedForm === 'form3'" [formGroup]="transactionForm" (ngSubmit)="makeWithdrawal()"  >
+    <fieldset>
+      <legend>Make a withdrawal</legend>
+      <div class="mb-3">
+        <label for="source" class="form-label">Select the source account</label>
+       <!-- <select id="source" class="form-select">
+          <option>Source Account</option>
+        </select>-->
+        <input formControlName="amount" type="text" id="amount" class="form-control" placeholder="Amount">
+
+      </div>
+      <div class="mb-3">
+        <label for="amount" class="form-label">Amount</label>
+        <input formControlName="amount" type="text" id="amount" class="form-control" placeholder="Amount">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+  </form>
