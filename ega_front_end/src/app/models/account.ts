@@ -1,7 +1,7 @@
 import { Client } from "./client"
 
 export interface Account {
-    accountNumber: number
+    accountNumber: string
     id: number
     accountType: string
     creationDate: string

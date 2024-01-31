@@ -19,7 +19,6 @@ export class AccountsComponent {
      private router:Router,
      private accountService : AccountService){}
 
-  //tableAccounts: Array<any> = [];
 
   ngOnInit(): void {
     this.loadAccounts();
@@ -31,14 +30,7 @@ export class AccountsComponent {
     });
   }
 
-  saveAccount(accountDto: any) {
-    this.accountService.saveAccount(accountDto).subscribe(response => {
-      // Handle the response as needed
-      console.log('Account saved successfully:', response);
-      // Reload the accounts after saving
-      this.loadAccounts();
-    });
-  }
+
 
   getAccountById(id: number) {
     this.accountService.getAccountById(id).subscribe(data => {
@@ -48,12 +40,19 @@ export class AccountsComponent {
   }
 
   deleteAccount(id: number) {
-    this.accountService.deleteAccount(id).subscribe(response => {
-      // Handle the response as needed
-      console.log('Account deleted successfully:', response);
-      // Reload the accounts after deletion
-      this.loadAccounts();
-    });
+    if (confirm('Are you sure to delete this ?')) {
+      this.accountService.deleteAccount(id).subscribe({
+        next: value => {
+          this.accounts = this.accounts.filter(account=> account.id !== id);
+        }
+      });
+    }
   }
+
+  updateClient(account: Account) {
+    this.router.navigateByUrl(`update-account/${account.id}`);
+  }
+
+
 
 }

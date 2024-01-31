@@ -9,14 +9,30 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  username: string = '';
-  password: string = '';
-
+  address: string = '';
+  phone: string = '';
   constructor(
     private authService: AuthService,
     private router: Router
   ) {}
 
+  login(): void {
+    // Call the authentication service with the entered values
+    this.authService.login(this.address, this.phone).subscribe(
+      (response) => {
+        // Handle successful login
+        console.log('Login successful:', response);
+        // Redirect to a specific route if needed
+        this.router.navigate(['/accounts']);
+      },
+      (error) => {
+        // Handle login error
+        console.error('Login failed:', error);
+        alert('Login failed. Please check your credentials and try again.');
+      }
+    );
+  }
+/*
   login() {
     // Validate the form data
     if (!this.isValidEmail(this.username)) {
@@ -48,4 +64,5 @@ export class LoginComponent {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
+  */
 }

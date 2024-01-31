@@ -13,6 +13,10 @@ import { OnInit } from '@angular/core';
 })
 export class AppComponent {
   title = 'ega_front_end';
+  //showAdmin: boolean = true;  showClient: boolean = false;
+  //showAdmin: boolean = false;  showClient: boolean = true;
+  showAdmin: boolean = true;  showClient: boolean = true;
+
 
 
   //constructor(private accountService : AccountService) {}

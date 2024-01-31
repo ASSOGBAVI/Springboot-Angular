@@ -23,10 +23,10 @@ public class Account {
     private String accountNumber;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    //private String accountType;
+    private String accountType;
 
     //Hafta do a large refractor.
-    private AccountType accountType;
+    //private AccountType accountType;
     private LocalDateTime creationDate;
     private BigDecimal balance;
     private String countryCode = "228";

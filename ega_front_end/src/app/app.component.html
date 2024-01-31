@@ -6,7 +6,7 @@
         <img class="nav_bar_logo" src="../assets/images/bank.svg" alt="Ega Bank Logo">EGA
       </a>
     </div>
-    <div id="nav-content">
+    <div id="nav-content" *ngIf="showClient">
       <div class="nav-button">
         <a href="#" routerLink="/accounts"><i class="fas fa-money-check-alt"></i><span>Accounts</span></a>
       </div>
@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <div id="nav-content">
+    <div id="nav-content" *ngIf="showAdmin" >
       <div class="nav-button">
         <a href="#" routerLink="/clients"><i class="fas fa-user"></i><span>Client</span></a>
       </div>
@@ -40,17 +40,17 @@
           <img src="../assets/images/money.jpg" class="rounded-circle" />
         </div>
         <div id="nav-footer-titlebox">
-          <a id="nav-footer-title" target="_blank" class="text-light">@Meisekii</a>
+          <a id="nav-footer-title" target="_blank" class="text-light">@EGA</a>
         </div>
       </div>
     </div>
   </div>
 
-<!-- Main Content Area -->
-<div class="d-flex flex-column flex-grow-1 p-4" style="margin-left: 250px;">
+  <!-- Main Content Area -->
+  <div class="d-flex flex-column flex-grow-1 p-4" style="margin-left: 250px;">
 
- 
-  <router-outlet></router-outlet>
+
+    <router-outlet></router-outlet>
 
   </div>
 </div>

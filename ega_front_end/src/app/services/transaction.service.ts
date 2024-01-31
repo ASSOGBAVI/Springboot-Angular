@@ -9,7 +9,7 @@ import { Transaction } from '../models/transaction';
 export class TransactionService {
 
   readonly API_URL = "http://localhost:8080"
-  readonly ENDPOINT = "/api/accounts"
+  readonly ENDPOINT = "/api/transactions"
 
   constructor(private httpClient: HttpClient ) { }
 

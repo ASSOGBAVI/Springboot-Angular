@@ -28,18 +28,22 @@ export class NewClientComponent {
       phone: this.fb.control('', [Validators.required]),
       nationality: this.fb.control('', [Validators.required])
 
+
     });
   }
 
   saveClient() {
+    console.log('Saving client:', this.clientForm.value);
+
     let client = this.clientForm.value;
     this.cs.saveClient(client)
       .subscribe({
         next: data => {
+          console.log('Save successful:', data);
           this.router.navigateByUrl("/clients");
         },
         error: err => {
-          console.log(err);
+          console.error('Save failed:', err);
         }
       });
   }

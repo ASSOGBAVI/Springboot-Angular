@@ -9,7 +9,8 @@ import { Transaction } from '../models/transaction';
 })
 export class TransactionsComponent {
   transactions: Array<Transaction> = [];
-
+  //showClient: Boolean = false;
+  showClient: Boolean = true;
 
 
   constructor(private router:Router){}

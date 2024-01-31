@@ -5,16 +5,17 @@
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col" *ngFor="let client of clients">
-      <div class="card h-100">
-        <img src="../assets/images/bank.svg" class="card-img-top" alt="..." style="width: 100px; height: 50px; margin-top: 20px;">
+      <div class="card h-100" style="width: 300px;">
+        
+        <img src="../assets/images/bank.svg"  class="card-img-top" alt="..." style="width: 100px; height: 50px; margin-top: 20px;">
         <div class="card-body">
-          <h5 class="card-title">Name: {{ client.clientLastName}} {{ client.clientFirstName }}</h5>
+          <h5 class="card-title" class="bg-success" >Name: {{ client.clientLastName}} {{ client.clientFirstName }}</h5>
           <h4 class="card-title">Sexe: {{ client.sexe}}</h4>
           <h4 class="card-title">nationality: {{ client.nationality}}</h4>
           <h4 class="card-title">Birth date: {{ client.birthDate}}</h4>
           <h4 class="card-title">Address: {{ client.address}}</h4>
           <h4 class="card-title">Phone: {{ client.phone}}</h4>
-          <h4 class="card-title">Date de creation: {{ client.creationDate}}</h4>
+          <h4 class="card-title" class="" >Date de creation: {{ client.creationDate}}</h4>
         </div>
         <div class="d-flex justify-content-center mt-3 mb-4">
             <div class="btn-group" role="group" aria-label="Basic outlined example">
